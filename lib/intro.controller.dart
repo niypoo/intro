@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:intro/helpers/intro.helper.dart';
 
 class IntroController extends GetxController {
+  static IntroController get to => Get.find();
+
   // pages View
   final PageController pageController = PageController();
   int step = 1;
