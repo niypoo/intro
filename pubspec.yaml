@@ -1,0 +1,31 @@
+name: intro
+description: A new Flutter module project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  get: ^4.6.5
+  fly_ui:
+    git:
+      url: git@github.com:niypoo/fly_ui.git
+  app_configuration_service:
+    git: 
+      url: git@github.com:niypoo/app_configuration_service.git
+  local_storage_service:
+    git: 
+      url: git@github.com:niypoo/local_storage_service.git
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+
+flutter:
+  uses-material-design: true
