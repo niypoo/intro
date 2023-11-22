@@ -14,7 +14,7 @@ class IntroHelper {
     // read local value
     final String? localValue = LocaleStorageService.to.instance
         .read('$localStorageKey-${AppConfigService.to.appName}');
-
+print('[[[[[localValue]]]]] $localValue');
     // skip
     if (localValue != null) return;
 
