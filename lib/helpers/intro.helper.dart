@@ -14,9 +14,11 @@ class IntroHelper {
     // read local value
     final String? localValue = LocaleStorageService.to.instance
         .read('$localStorageKey-${AppConfigService.to.appName}');
-print('[[[[[localValue]]]]] $localValue');
+ 
     // skip
     if (localValue != null) return;
+
+print('[[[[[localValue]]]]] $localValue');
 
     // show intro
     show(pages);
@@ -24,6 +26,8 @@ print('[[[[[localValue]]]]] $localValue');
 
   // show intro
   static Future<void> show(List<Widget> pages) async {
+    print('[[[[[localValue]]]]] $pages');
+
     await Get.to(IntroView(pages: pages), binding: IntroBinding());
   }
 
