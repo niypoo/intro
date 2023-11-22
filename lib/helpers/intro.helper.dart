@@ -1,7 +1,6 @@
 import 'package:app_configuration_service/appInfo.config.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:intro/intro.binding.dart';
 import 'package:intro/intro.view.dart';
 import 'package:local_storage_service/localStorage.service.dart';
 
@@ -14,21 +13,12 @@ class IntroHelper {
     // read local value
     final String? localValue = LocaleStorageService.to.instance
         .read('$localStorageKey-${AppConfigService.to.appName}');
- 
+
     // skip
-    if (localValue != null) return;
-
-print('[[[[[localValue]]]]] $localValue');
-
-    // show intro
-    show(pages);
-  }
-
-  // show intro
-  static Future<void> show(List<Widget> pages) async {
-    print('[[[[[localValue]]]]] $pages');
-
-    await Get.to(IntroView(pages: pages), binding: IntroBinding());
+    if (localValue == null) {
+      // show intro
+      await Get.to(IntroView(pages: pages));
+    }
   }
 
   static Future<void> neverShowAgain() async {
